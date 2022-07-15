@@ -1,0 +1,185 @@
+@use "./config";
+@use "./mixin";
+
+.footer{
+    background-color: config.$very-dark-cyan;
+    padding: 8em 1em 0em 1em;
+}
+
+.footer p, .footer a{
+    color: white;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.footer a{
+    font-weight: 400;
+}
+
+.footer__logo{
+    max-width: 170px;
+    margin: 1em 0 2em 0;
+}
+
+.footer__logo img{
+    filter: brightness(0) invert(1);
+}
+
+.company-info > div{
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    margin: 1.5em 0;
+}
+
+.company-info > div:first-child{
+    align-items: flex-start;
+}
+
+.company-info img{
+    max-width: 20px;
+}
+
+.location img{
+    max-width: 14px;
+    margin-top: 0.4em;
+}
+
+.location p{
+    max-width: 390px;
+}
+
+.footer__menu{
+    text-align: left;
+    margin-top: 4.0em;
+}
+
+.footer__menu > li + li{
+    margin: 2em 0;
+}
+
+.footer__menu a{
+    font-size: 1.1rem;
+}
+
+.social-media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin: 2em 0 1.2em 0;
+}
+
+.social-media i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    color: white;
+    font-size: 1.0rem;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.copy-right p,
+.attribution p,
+.attribution a{
+    font-size: 0.70rem;
+    text-align: center;
+}
+
+.attribution a{
+    color: rgb(92, 186, 217);
+}
+
+.attribution {
+    margin-top: 1em;
+}
+
+@include mixin.screenMinWidthStyle(config.$first-break-point){
+
+    .footer{
+        padding: 7em 2em 0em 2em;
+    }
+
+    .footer-wraper{
+        max-width: 1240px;
+        margin: 0 auto;
+    }
+
+    .footer .row{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 2em;
+        justify-content: space-between;
+    }
+
+    .footer .row > *{
+        margin-top: 1em;
+    }
+
+    .footer__menu{
+        display: grid;
+        // border: 1px solid red;
+        margin-top: 0;
+        margin-top: 0;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "about-us career",
+                                "what-we-do blog",
+                                "faq contact";
+        gap: 2em 6em;
+    }
+
+    .footer__menu > li + li{
+        margin: 0;
+    }
+
+    .footer__menu a{
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background-color: white;
+            transition: width 0.6s ease;
+        }
+
+        &:hover::before{
+            width: 100%;
+        }
+    }
+    
+
+    .social-media{
+        margin: 0;
+    }
+
+    .social-media i{
+        cursor: pointer;
+        transition: all 0.4s ease;
+        &:hover{
+            color: config.$pink;
+            border-color: config.$pink;
+        }
+    }
+
+    .company-info .location{
+        margin-top: 0;
+    }
+
+    .company-info .email{
+        margin-bottom: 0;
+    }
+
+    .copy-right p{
+        text-align: right;
+    }
+
+    .attribution{
+        margin-top: 2em;
+    }
+}

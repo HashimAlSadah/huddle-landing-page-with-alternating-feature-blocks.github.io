@@ -1,0 +1,27 @@
+@use "./config";
+@use "./mixin";
+
+.CTA-bottom-wraper{
+    padding: 0 1em;
+}
+
+.CTA-bottom{
+    position: relative;
+    padding: 2.5em 1em 2.0em 1em;
+    margin: 6.0em auto -4em auto;
+}
+
+.CTA-bottom h1{
+    font-size: 1.08rem;
+}
+
+@include mixin.screenMinWidthStyle(config.$first-break-point){
+    .CTA-bottom{
+        max-width: 800px;
+        padding: 3.5em 1em 3.0em 1em;
+    }
+    .CTA-bottom h1{
+        text-align: center;
+        font-size: 1.7rem;
+    }
+}

@@ -1,0 +1,6 @@
+
+@mixin screenMinWidthStyle($MinWith){
+    @media(min-width: $MinWith){
+        @content;
+    }
+}

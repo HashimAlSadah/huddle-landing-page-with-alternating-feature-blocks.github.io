@@ -1,0 +1,68 @@
+@use "./config";
+@use "./mixin";
+
+.features{
+    padding: 0 1.5em;
+}
+
+section{
+    max-width: 500px;
+    margin: 2.5em auto;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 1px 1px 30px 1px rgba(black, 0.05), -1px -1px 20px 1px rgba(black, 0.05);
+}
+
+.feature-section:first-child{
+    margin-top: 4em;
+}
+
+.feature-section{
+    padding: 2em 2em;
+}
+
+.section__image{
+    margin-top: 1.8em;
+    margin-bottom: 2em;
+} 
+
+.section__title{
+    font-size: clamp(1.3rem, 5.2vw, 1.5rem);
+}
+
+.section__body{
+    margin-top: 1em;
+    font-size: clamp(0.86rem, 3.5vw, 1rem); 
+    color: config.$grayish-blue;
+}
+
+@include mixin.screenMinWidthStyle(config.$first-break-point){
+    section{
+        max-width: 1240px;
+    }
+
+    .feature-section{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 4em;
+    }
+
+    .section__image{
+        max-width: 500px;
+    }
+
+    .section__text{
+        max-width: 550px;
+    }
+
+    .section__title{
+        font-size: clamp(1.5rem, 3vw, 1.8rem);
+    }
+
+    .section__body{
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
+    }
+}
+
+
