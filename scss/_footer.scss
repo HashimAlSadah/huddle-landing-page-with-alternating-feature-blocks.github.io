@@ -125,11 +125,18 @@
         // border: 1px solid red;
         margin-top: 0;
         margin-top: 0;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "about-us career",
-                                "what-we-do blog",
+        grid-template-areas: "about-us career"
+                                "what-we-do blog"
                                 "faq contact";
         gap: 2em 6em;
+    }
+
+    .career{
+        grid-area: career;
+    }
+
+    .blog{
+        grid-area: blog;
     }
 
     .footer__menu > li + li{

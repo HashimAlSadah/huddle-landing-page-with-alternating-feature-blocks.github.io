@@ -259,8 +259,11 @@ section {
     align-items: center;
     gap: 4em;
   }
+  .feature-section:nth-child(2) {
+    flex-direction: row;
+  }
   .section__image {
-    max-width: 500px;
+    max-width: 450px;
   }
   .section__text {
     max-width: 550px;
@@ -414,9 +417,14 @@ section {
     display: grid;
     margin-top: 0;
     margin-top: 0;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "about-us career", "what-we-do blog", "faq contact";
+    grid-template-areas: "about-us career" "what-we-do blog" "faq contact";
     gap: 2em 6em;
+  }
+  .career {
+    grid-area: career;
+  }
+  .blog {
+    grid-area: blog;
   }
   .footer__menu > li + li {
     margin: 0;

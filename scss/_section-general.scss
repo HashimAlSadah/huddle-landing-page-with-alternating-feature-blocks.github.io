@@ -48,8 +48,12 @@ section{
         gap: 4em;
     }
 
+    .feature-section:nth-child(2){
+        flex-direction: row;
+    }
+
     .section__image{
-        max-width: 500px;
+        max-width: 450px;
     }
 
     .section__text{
